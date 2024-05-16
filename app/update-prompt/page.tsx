@@ -1,6 +1,6 @@
 "use client"
 
-import { FormEvent, Suspense, useEffect, useState} from 'react';
+import { FormEvent, useEffect, useState} from 'react';
 import { useRouter, useSearchParams} from 'next/navigation';
 
 import FormComponent from '@components/Form.component';
@@ -60,15 +60,13 @@ const EditPrompt = () => {
     }
 
     return (
-        <Suspense>
-            <FormComponent
-            type="Edit"
-            post={post}
-            setPost={setPost}
-            submitting={submitting}
-            handleSubmit={updatePrompt}
-            />
-        </Suspense>
+        <FormComponent
+        type="Edit"
+        post={post}
+        setPost={setPost}
+        submitting={submitting}
+        handleSubmit={updatePrompt}
+        />
     )
 }
 
