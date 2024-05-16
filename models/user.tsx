@@ -1,10 +1,6 @@
 import { Schema, model, models } from "mongoose";
 
 const userSchema = new Schema({
-    _id:{
-        type: Schema.Types.ObjectId,
-        unique: [true, "User already exists"]
-    },
     email: {
         type: String, 
         unique: [true, "Email already Exists!"],
