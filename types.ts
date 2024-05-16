@@ -1,10 +1,9 @@
-import { Schema } from "mongoose"
+
 import { FormEventHandler } from "react"
 
 export type PromptType = {
     prompt: string,
-    tag: string,
-    _id: string | Schema.Types.ObjectId | null
+    tag: string
 }
 
 export type FormParams = {

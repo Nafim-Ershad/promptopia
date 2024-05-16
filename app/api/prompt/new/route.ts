@@ -1,9 +1,8 @@
 import { connectToDB } from "@utils/databse";
 import Prompt from "@models/prompt";
-import { Schema } from "mongoose";
+
 
 export const POST = async(req: any) => {
-    console.log(typeof(req));
     const {userId, prompt, tag} = await req.json();
 
     try {
