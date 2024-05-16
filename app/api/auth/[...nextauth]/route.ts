@@ -5,16 +5,20 @@ import { connectToDB } from "@utils/databse";
 
 import User from "@models/user";
 
-
+const {
+    GOOGLE_ID,
+    GOOGLE_CLIENT_SECRET,
+    NEXTAUTH_SECRET
+} = process.env
 
 const handler = NextAuth({
     providers: [
         GoogleProvider({
-            clientId: process.env.GOOGLE_ID,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET
+            clientId: GOOGLE_ID,
+            clientSecret: GOOGLE_CLIENT_SECRET
         })
     ],
-    secret: process.env.NEXTAUTH_SECRET,
+    secret: NEXTAUTH_SECRET,
     callbacks: {
         async session({session}: any){
             const sessionUser = await User.findOne({
