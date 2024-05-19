@@ -18,7 +18,7 @@ const handler = NextAuth({
             clientSecret: GOOGLE_CLIENT_SECRET as string
         })
     ],
-    secret: NEXTAUTH_SECRET,
+    secret: NEXTAUTH_SECRET as string,
     callbacks: {
         async session({session}: any){
             const sessionUser = await User.findOne({
@@ -29,6 +29,7 @@ const handler = NextAuth({
             return session;
         },
         async signIn({profile}: any){
+            // {user, profile, email, account, credentials}
             try {
                 await connectToDB();
 
