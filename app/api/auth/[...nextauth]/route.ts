@@ -14,8 +14,8 @@ const {
 const handler = NextAuth({
     providers: [
         GoogleProvider({
-            clientId: GOOGLE_ID,
-            clientSecret: GOOGLE_CLIENT_SECRET
+            clientId: GOOGLE_ID as string,
+            clientSecret: GOOGLE_CLIENT_SECRET as string
         })
     ],
     secret: NEXTAUTH_SECRET,
